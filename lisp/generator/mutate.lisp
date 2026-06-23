@@ -1,0 +1,87 @@
+(in-package #:prompt-universe)
+
+(defvar *mutation-key->heading*
+  '((:flavor . "FLAVOR")
+    (:subtitle . "SUBTITLE ONLY")
+    (:title . "TITLE ONLY")
+    (:color-theme . "COLOR THEME")
+    (:object-design . "OBJECT DESIGN")
+    (:top-garnish . "TOP GARNISH")
+    (:accessory-design . "ACCESSORY DESIGN")
+    (:tabletop-styling . "TABLETOP STYLING")
+    (:description-design . "DESCRIPTION DESIGN")
+    (:typography . "TYPOGRAPHY")
+    (:hair-style . "HAIR STYLE")
+    (:outfit-design . "OUTFIT DESIGN")
+    (:thematic-symbol . "THEMATIC SYMBOL")
+    (:background . "BACKGROUND")
+    (:action . "ACTION")
+    (:composition . "COMPOSITION")
+    (:secondary . "SECONDARY")
+    (:tertiary . "TERTIARY")
+    (:quaternary . "QUATERNARY")
+    (:evolution-strategy . "EVOLUTION STRATEGY")
+    (:story-background . "STORY BACKGROUND")
+    (:lighting . "LIGHTING")
+    (:negative-space-guidance . "NEGATIVE-SPACE GUIDANCE")
+    (:camera . "CAMERA")
+    (:gender-presentation . "GENDER PRESENTATION")
+    (:body-proportion . "BODY PROPORTION")
+    (:facial-traits . "FACIAL TRAITS")
+    (:pet-design . "PET DESIGN")
+    (:matching-outfit-design . "MATCHING OUTFIT DESIGN")
+    (:matching-hat-design . "MATCHING HAT DESIGN")
+    (:owner-design . "OWNER DESIGN")))
+
+(defun mutation-key->heading (key)
+  (or (cdr (assoc key *mutation-key->heading*))
+      (section-key->heading key)))
+
+(defun clone-prompt-param (entry)
+  (make-prompt-param :value (prompt-param-value entry)))
+
+(defun clone-prompt-section (section)
+  (make-prompt-section
+   :heading (prompt-section-heading section)
+   :entries (mapcar (lambda (entry)
+                      (if (prompt-param-p entry)
+                          (clone-prompt-param entry)
+                          entry))
+                    (prompt-section-entries section))))
+
+(defun clone-prompt (prompt &key name)
+  (make-prompt
+   :name (or name (prompt-name prompt))
+   :intent (prompt-intent prompt)
+   :semantic-tags (copy-list (prompt-semantic-tags prompt))
+   :risk-tags (copy-list (prompt-risk-tags prompt))
+   :preface (copy-list (prompt-preface prompt))
+   :sections (mapcar #'clone-prompt-section (prompt-sections prompt))))
+
+(defun set-section-value (prompt heading value &key param-p)
+  (let ((target (normalize-heading heading)))
+    (make-prompt
+     :name (prompt-name prompt)
+     :intent (prompt-intent prompt)
+     :semantic-tags (prompt-semantic-tags prompt)
+     :risk-tags (prompt-risk-tags prompt)
+     :preface (prompt-preface prompt)
+     :sections
+     (loop for section in (prompt-sections prompt)
+           collect
+             (if (string= target (normalize-heading (prompt-section-heading section)))
+                 (make-prompt-section
+                  :heading (prompt-section-heading section)
+                  :entries (list (if param-p (param value) value)))
+                 (clone-prompt-section section))))))
+
+(defun apply-mutation (prompt mutation)
+  (loop for (key . value) in mutation
+        for heading = (mutation-key->heading key)
+        do (setf prompt (set-section-value prompt heading value :param-p t))
+        finally (return prompt)))
+
+(defun apply-mutations (prompt mutation-list)
+  (loop for mutation in mutation-list
+        do (setf prompt (apply-mutation prompt mutation))
+        finally (return prompt)))

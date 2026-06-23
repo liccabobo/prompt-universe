@@ -1,0 +1,9 @@
+.DS_Store
+audits/
+build/
+output/candidates/
+output/approved/
+output/variants/
+output/batches/
+output/logs/
+# output/publish/ is intentionally tracked (see docs/rules/publish.md)

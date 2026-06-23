@@ -1,0 +1,193 @@
+Prompt Universe Fan & Personal Non-Commercial License
+Version 1.1, June 2026
+
+Copyright (c) 2026 Licca Bobo. All rights reserved.
+
+================================================================================
+IMPORTANT — READ CAREFULLY
+
+This is NOT the MIT License, Apache License, GPL, or any commercial-friendly
+open-source license.
+
+You may use this project as a fan or individual for personal and non-commercial
+purposes. You may NOT use it to make money, run a business, or offer paid
+services built on this project without a separate written agreement from the
+Licensor.
+================================================================================
+
+1. Definitions
+
+   1.1 "Software" means the Prompt Universe repository and all of its contents,
+       including source code, Lisp definitions, documentation, configuration
+       files, seed prompts, expansion plans, example outputs, scripts, published
+       variant batches, and accompanying materials, whether in source or
+       compiled form.
+
+   1.2 "Generated Output" means prompt text, markdown files, variant batches,
+       reports, logs, images, and other materials You create by running or
+       extending the Software. Generated Output is separate from the Software
+       itself.
+
+   1.3 "You" means an individual exercising permissions granted by this License,
+       or a legal entity on behalf of which an individual is exercising those
+       permissions.
+
+   1.4 "Fan Use" means personal, hobby, or creative use by fans and individual
+       users, including making images for Yourself, experimenting with prompts,
+       learning the toolchain, and sharing Generated Output non-commercially.
+
+   1.5 "Personal Use" means use by You for Yourself where the primary purpose
+       is not revenue generation or commercial advantage, including private
+       study, personal creative projects, hobby work, and non-profit education.
+
+   1.6 "Non-Commercial Use" means Fan Use, Personal Use, or any other use that
+       is not Commercial Use.
+
+   1.7 "Commercial Use" means any use, reproduction, distribution,
+       sublicensing, sale, rental, lease, hosting for pay, or other exploitation
+       primarily intended to obtain monetary compensation or commercial
+       advantage, whether direct or indirect, including but not limited to:
+
+       (a) selling or licensing the Software, any Modified Version, or access to
+           them;
+       (b) selling or licensing prompt packs, prompt libraries, template packs,
+           courses, workshops, subscriptions, or consulting derived from or
+           substantially based on the Software, its seeds, plans, or published
+           batches;
+       (c) operating a paid service, SaaS, API, app, marketplace listing, or
+           membership offering powered by the Software or its outputs;
+       (d) using the Software in client work, commissioned work, or production
+           workflows billed to a third party;
+       (e) using the Software in the ordinary revenue-generating business of a
+           for-profit organization;
+       (f) fundraising or crowdfunding where the Software or its outputs are a
+           primary deliverable or selling point;
+       (g) any use that would require a commercial license if the Licensor
+           offered one.
+
+   1.8 "Licensor" means Licca Bobo, the copyright holder of the Software.
+
+   1.9 "Modified Version" means any work based on or incorporating the
+       Software, including translations, adaptations, derivative repositories,
+       forks, or prompt systems built substantially from the Software's seeds,
+       modules, methods, or plans.
+
+   1.10 "Attribution" means keeping visible credit to "Prompt Universe" and
+        "Licca Bobo" in repository README, documentation, or equivalent
+        prominent notice when redistributing the Software or a Modified Version.
+
+2. License Grant
+
+   Subject to the terms of this License, the Licensor grants You a worldwide,
+   royalty-free, non-exclusive, non-transferable license to:
+
+   (a) use the Software for Fan Use and Non-Commercial Use;
+   (b) copy the Software for backup, local development, and redistribution as
+       permitted in Section 4;
+   (c) modify the Software and create Modified Versions for Fan Use and
+       Non-Commercial Use;
+   (d) run the Software to compile, validate, batch-generate, and publish
+       prompts for Fan Use and Non-Commercial Use;
+   (e) share Generated Output non-commercially, including posting personal
+       creations to social platforms, as long as You do not sell or license
+       that output as a commercial product or service.
+
+3. Restrictions
+
+   You may NOT, without prior written permission from the Licensor:
+
+   (a) use the Software or any Modified Version for Commercial Use;
+   (b) remove or alter copyright notices, license texts, or required
+       Attribution;
+   (c) use the Licensor's name, branding, or trademarks to endorse a product,
+       service, Modified Version, or imply official affiliation;
+   (d) sublicense the Software for Commercial Use;
+   (e) use the Software in any manner that violates applicable law, including
+       generating content that infringes third-party rights when You had reason
+       to know such risk existed.
+
+4. Redistribution
+
+   You may redistribute the Software or a Modified Version only if all of the
+   following conditions are met:
+
+   (a) redistribution is for Non-Commercial Use only;
+   (b) You include a complete copy of this License;
+   (c) You retain all copyright and attribution notices;
+   (d) You provide Attribution as defined in Section 1.10;
+   (e) You clearly state any changes made in a Modified Version;
+   (f) You do not misrepresent a Modified Version as an official release from
+       the Licensor.
+
+   Redistribution does not grant recipients Commercial Use rights.
+
+5. Generated Output
+
+   5.1 Unless otherwise stated in a separate written agreement, the Licensor
+       does not claim ownership over Generated Output that You create using the
+       Software.
+
+   5.2 You are responsible for how You use Generated Output, including
+       compliance with platform terms, third-party intellectual property,
+       privacy, and applicable content policies.
+
+   5.3 The Software includes responsible-prompt guidance and validators, but
+       those tools do not guarantee legal, ethical, or platform compliance of
+       Generated Output. You use Generated Output at Your own risk.
+
+   5.4 You may not sell, license, or commercially distribute prompt packs or
+       bulk prompt libraries whose primary value comes from compiling,
+       repackaging, or reselling the Software's seeds, plans, or published
+       batches.
+
+6. Contributions
+
+   If You submit patches, issues, documentation improvements, seed proposals, or
+   other contributions to the official repository or to the Licensor, You grant
+   the Licensor a perpetual, worldwide, non-exclusive, royalty-free license to
+   use, reproduce, modify, sublicense, and distribute those contributions
+   under this License or under another license chosen by the Licensor for the
+   contributed material.
+
+7. Reservation of Rights
+
+   All rights not expressly granted in this License are reserved by the
+   Licensor. Commercial licensing, enterprise use, paid workshops, white-label
+   deployment, and paid support may be available under separate terms by
+   contacting the Licensor.
+
+8. Termination
+
+   8.1 This License terminates automatically if You breach any of its terms.
+
+   8.2 Upon termination, You must stop using the Software and destroy or remove
+       copies in Your possession or control, except that Generated Output
+       created before termination remains subject to Section 5.
+
+   8.3 Sections 5, 7, 9, and 10 survive termination.
+
+9. Disclaimer of Warranty
+
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS
+   FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT. THE LICENSOR DOES NOT
+   WARRANT THAT THE SOFTWARE WILL BE ERROR-FREE, UNINTERRUPTED, OR SUITABLE FOR
+   ANY PARTICULAR IMAGE MODEL, PLATFORM, OR PRODUCTION WORKFLOW.
+
+10. Governing Law
+
+    This License is governed by the laws of Taiwan (Republic of China), without
+    regard to conflict-of-law rules, except where mandatory local law provides
+    otherwise.
+
+11. Entire Agreement
+
+    This License constitutes the entire agreement between You and the Licensor
+    regarding the Software for non-commercial use. Commercial use requires a
+    separate written agreement.
+
+For commercial licensing inquiries, open an issue in the official repository or
+contact the repository owner.
+
+A Chinese reference translation is available at LICENSE.zh-TW.md. If the
+translations conflict, this English text controls.
