@@ -1,25 +1,5 @@
 (in-package #:prompt-universe)
 
-(defvar *expansion-plan-registry* (make-hash-table :test #'equal))
-
-(defstruct expansion-plan
-  name
-  intent
-  seed-id
-  source-prompt
-  preserve
-  forbid
-  variant-axes
-  variant-rules
-  mutations)
-
-(defun register-expansion-plan (name plan)
-  (setf (gethash (normalize-name name) *expansion-plan-registry*) plan)
-  name)
-
-(defun find-expansion-plan (name)
-  (gethash (normalize-name name) *expansion-plan-registry*))
-
 (defun parse-mutation-entry (entry)
   (loop for item in entry
         when (and (consp item) (keywordp (first item)))
@@ -27,6 +7,7 @@
 
 (defun parse-expansion-plan-forms (name forms)
   (let ((intent nil)
+        (seed-control nil)
         (seed-id nil)
         (source-prompt nil)
         (preserve nil)
@@ -39,6 +20,7 @@
         (error "Invalid expansion-plan form in ~A: ~S" name form))
       (case (first form)
         (:intent (setf intent (second form)))
+        (:seed-control (setf seed-control (second form)))
         (:seed (setf seed-id (second form)))
         (:source (setf source-prompt (second form)))
         (:preserve (setf preserve (rest form)))
@@ -55,6 +37,7 @@
     (make-expansion-plan
      :name name
      :intent intent
+     :seed-control seed-control
      :seed-id seed-id
      :source-prompt source-prompt
      :preserve preserve
@@ -68,6 +51,8 @@
 
 (defun plan-base-prompt (plan)
   (cond
+    ((expansion-plan-seed-control plan)
+     (seed-control-base-prompt (expansion-plan-seed-control-object plan)))
     ((expansion-plan-source-prompt plan)
      (let ((prompt (find-prompt (expansion-plan-source-prompt plan))))
        (unless prompt

@@ -9,13 +9,14 @@
   "Default semantic axes for variant expansion plans.")
 
 (defvar *variant-axis->mutation-keys*
-  '((:color-theme . (:color-theme :lighting))
+  '((:color-theme . (:color-theme :color-design :lighting))
     (:theme-anchor . (:secondary :background :evolution-strategy :object-design
                                  :flavor :story-background))
     (:accessory-set . (:thematic-symbol :accessory-design :top-garnish))
     (:scene-shell . (:background :secondary))
     (:outfit-design . (:outfit-design :matching-outfit-design :matching-hat-design))
-    (:evolution-strategy . (:evolution-strategy))
+    (:evolution-strategy . (:evolution-strategy :design-evolution-strategy
+                            :tertiary-evolution-strategy))
     (:action . (:action))
     (:composition . (:composition)))
   "Map semantic axes to concrete mutation keys.")
@@ -29,6 +30,8 @@
 
 (defun variant-axis-spec (plan)
   (or (expansion-plan-variant-axes plan)
+      (let ((control (expansion-plan-seed-control-object plan)))
+        (and control (seed-control-variant-axes control)))
       *default-variant-axis-spec*))
 
 (defun axis-mutation-keys (axis &optional (spec *default-variant-axis-spec*))
@@ -86,22 +89,42 @@
               messages)))
     messages))
 
-(defun validate-expansion-plan-mutations (plan &optional base &key controller)
-  (let* ((ctrl (or controller (ignore-errors (variant-controller))))
+(defun parse-expansion-validation-args (args)
+  (let ((base nil)
+        (controller nil)
+        (tail args))
+    (when (and tail (not (keywordp (first tail))))
+      (setf base (pop tail)))
+    (loop while tail
+          do (let ((key (pop tail)))
+               (unless (and (keywordp key) tail)
+                 (error "Invalid validate-expansion-plan-mutations arguments: ~S" args))
+               (let ((value (pop tail)))
+                 (case key
+                   (:base (setf base value))
+                   (:controller (setf controller value))
+                   (otherwise
+                    (error "Unknown validate-expansion-plan-mutations keyword: ~A" key))))))
+    (values base controller)))
+
+(defun validate-expansion-plan-mutations (plan &rest args)
+  (multiple-value-bind (base controller)
+      (parse-expansion-validation-args args)
+    (let* ((ctrl (or controller (ignore-errors (variant-controller))))
          (base-prompt (or base (plan-base-prompt plan)))
          (spec (if ctrl
                    (effective-variant-axis-spec plan ctrl)
                    (variant-axis-spec plan)))
          (messages nil))
-    (loop for mutation in (expansion-plan-mutations plan)
-          for index from 1
-          do (setf messages
-                   (append messages
-                           (validate-variant-mutation base-prompt mutation index spec)
-                           (if ctrl
-                               (gender-controller-messages mutation index ctrl)
-                               nil))))
-    (values (null messages) messages spec)))
+      (loop for mutation in (expansion-plan-mutations plan)
+            for index from 1
+            do (setf messages
+                     (append messages
+                             (validate-variant-mutation base-prompt mutation index spec)
+                             (if ctrl
+                                 (gender-controller-messages mutation index ctrl)
+                                 nil))))
+      (values (null messages) messages spec))))
 
 (defun variant-axis-summary (plan)
   (let ((spec (variant-axis-spec plan)))

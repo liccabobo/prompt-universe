@@ -8,7 +8,7 @@ These rules apply to final prompt output produced by the compiler, generated var
 
 ## File Naming
 
-Compiled prompt markdown files must use uppercase English kebab-case:
+Compiled prompt markdown files must use uppercase English kebab-case by default:
 
 ```text
 HOLO-NAILS.md
@@ -17,10 +17,21 @@ CYBER-FAIRY-RED-HOOD.md
 GOLDEN-MANGO-JELLY.md
 ```
 
+Publish exception:
+
+Variant prompt files under `output/publish/` may add a short localized descriptor suffix after the standard uppercase English variant ID when it helps human review:
+
+```text
+MATCHING-PAW-PAIR-V001-柯基犬.md
+PRISM-LUNA-MOTH-V001-透明阿特拉斯天蛾.md
+```
+
+The required stable prefix must remain uppercase English kebab-case with a variant number, such as `MATCHING-PAW-PAIR-V001`. Localized suffixes are optional and should be compact. Do not use localized suffixes for canonical candidate files, approved canonical files, source seeds, Lisp files, reports, logs, or non-prompt documents.
+
 Repository folders and non-prompt documents must use lowercase English kebab-case:
 
 ```text
-prompts/source/
+illustration/seeds/
 docs/context/
 docs/methods/
 docs/rules/
@@ -28,7 +39,7 @@ noise-reduction-ladder.md
 prompt-output-format.md
 ```
 
-Only final prompt markdown files use uppercase filenames. Lisp files, context articles, methods, rules, reports, logs, and folder names use lowercase English kebab-case.
+Only final prompt markdown files use uppercase filenames, with the publish exception above. Lisp files, context articles, methods, rules, reports, logs, and folder names use lowercase English kebab-case.
 
 ## Section Format
 

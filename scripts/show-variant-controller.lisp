@@ -1,6 +1,11 @@
 #!/usr/bin/env sbcl --script
 (require :asdf)
 (pushnew (truename "./") asdf:*central-registry* :test #'equal)
+(ensure-directories-exist "build/fasl-cache/")
+(asdf:initialize-output-translations
+ `(:output-translations
+   (t ,(namestring (truename "build/fasl-cache/")))
+   :ignore-inherited-configuration))
 (asdf:load-system :prompt-universe)
 
 (let ((controller (prompt-universe:reload-variant-controller)))

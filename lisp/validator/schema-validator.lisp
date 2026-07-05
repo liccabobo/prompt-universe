@@ -4,6 +4,10 @@
   '("TITLE ONLY" "NEGATIVE")
   "Minimum required headings for prop-design prompts.")
 
+(defvar *title-section-alternatives*
+  '("TITLE ONLY" "TITLE MUST & ONLY" "TITLE")
+  "Accepted title lock headings across seed eras.")
+
 (defun prompt-has-section-p (prompt heading)
   (some (lambda (section)
           (string= (normalize-heading (prompt-section-heading section))
@@ -15,8 +19,14 @@
     (unless (prompt-sections prompt)
       (push "prompt has no sections" messages))
     (dolist (required *required-prop-sections*)
-      (unless (prompt-has-section-p prompt required)
-        (push (format nil "missing required section: ~A" required) messages)))
+      (cond
+        ((string= required "TITLE ONLY")
+         (unless (some (lambda (heading)
+                         (prompt-has-section-p prompt heading))
+                       *title-section-alternatives*)
+           (push "missing required section: TITLE ONLY" messages)))
+        ((not (prompt-has-section-p prompt required))
+         (push (format nil "missing required section: ~A" required) messages))))
     (dolist (section (prompt-sections prompt))
       (let ((heading (prompt-section-heading section)))
         (unless (and (stringp heading) (> (length heading) 0))

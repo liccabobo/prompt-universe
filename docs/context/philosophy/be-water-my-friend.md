@@ -24,4 +24,4 @@ graphic design fusion
 這種思路，跟寫程式很像，我覺得建構畫面的過程很有趣。
 
 武稜流光｜咒語參考
-prompts/source/evolution-strategy/KUNG-FU.md
+illustration/seeds/evolution-strategy/KUNG-FU.md

@@ -1,14 +1,14 @@
 # Implementation Status
 
-> Last updated: 2026-06-23
+> Last updated: 2026-07-01
 
-進度單一真相來源。`audits/` 內歷史報告僅供參考；若與本檔衝突，以本檔為準。
+進度單一真相來源。`plans/` 僅描述設計與規格，不記載實作狀態。`audits/` 內歷史報告僅供參考；若與本檔衝突，以本檔為準。
 
 ## 種子與輸出
 
 ```text
-prompts/source/          唯一 immutable seed library（.md）
-output/lisp-drafts/      AI 撰寫的 defprompt 草稿（.lisp）
+illustration/seeds/        模式 0 種子庫（.md；category 子資料夾）
+output/lisp-drafts/      defprompt 草稿（.lisp）
 output/candidates/       待審查編譯結果（gitignored）
 output/approved/         已確認 canonical（gitignored）
 output/variants/         延伸變體工作區（gitignored）
@@ -60,11 +60,25 @@ output/logs/             核准紀錄
 
 預設行為：`:transfer-mode . :move`，發佈後來源自 `output/variants/` 移走。
 
+## MVP-3.6 — Done（Higher Macro Layer 基礎）
+
+- `defcomposition-tree` + `(:use-composition ...)`
+  - composition tree 會展開成 `COMPOSITION` 與 `NEGATIVE-SPACE GUIDANCE` sections
+  - 支援 `:canvas`, `:focal-order`, node `:priority`, `:preserve`, `:mutable`, `:position`
+- `defseed-control` + `(:seed-control ...)`
+  - expansion plan 可引用 seed-control 取得來源 prompt / seed
+  - plan 未直接宣告 `:variant-axes` 時，可 fallback 到 seed-control 的 `:variant-axes`
+  - 提供 `effective-plan-preserve` / `effective-plan-forbid` 供 batch / validator 後續接入
+
+## Story Mode — Removed For Rebuild
+
+Story-mode implementation, sample assets, rules, project folders, and scripts were removed on 2026-07-01. `config/mode.lisp` remains as the persistent mode switch; mode ID `1` is reserved for a future rebuilt story mode.
+
 ---
 
 ## 尚未實作（長期）
 
-- `defcomposition-tree`, `defseed-control`, `defprompt-chain`
+- `defprompt-chain`
 - markdown ↔ lisp 雙向轉換
 - ASDF test system / CI
 - 完整 responsible validator（名人/品牌資料庫）
@@ -81,6 +95,7 @@ sbcl --script scripts/approve-draft.lisp cherry-jelly
 sbcl --script scripts/batch-generate.lisp dessert-jelly-flavor-10
 sbcl --script scripts/show-variant-controller.lisp
 sbcl --script scripts/publish-variants.lisp MATCHING-PAW-PAIR-2026-06-22
+sbcl --script scripts/show-mode.lisp
 ```
 
 ---

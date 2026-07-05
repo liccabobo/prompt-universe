@@ -30,7 +30,7 @@
 
 ## Source Seed 參考
 
-### `prompts/source/noise-reduction-ladder/EMERALD-JADE.md`
+### `illustration/seeds/noise-reduction-ladder/EMERALD-JADE.md`
 
 典型四層 + evolution 降噪敘事：
 
@@ -54,7 +54,7 @@ QUALITY:
 reduced high-frequency edge density, controlled edge diffusion, suppressed micro-texture fragmentation
 ```
 
-### `prompts/source/detail-shot/HOLO-NAILS.md`
+### `illustration/seeds/detail-shot/HOLO-NAILS.md`
 
 局部特寫任務的 QUALITY 降噪：
 
@@ -65,7 +65,7 @@ reduced high-frequency edge density, low-noise rendering, large smooth visual re
 suppressed texture fragmentation, stable frequency distribution, minimal rendering noise
 ```
 
-### `prompts/source/prop-design/GOLDEN-MANGO-JELLY.md`
+### `illustration/seeds/prop-design/GOLDEN-MANGO-JELLY.md`
 
 物件任務的材質降噪：
 
@@ -78,7 +78,7 @@ QUALITY:
 illustration-first rendering, non-3D anime illustration finish
 ```
 
-### `prompts/source/evolution-strategy/KUNG-FU.md`
+### `illustration/seeds/evolution-strategy/KUNG-FU.md`
 
 明確標記階梯階段：
 
@@ -87,7 +87,7 @@ QUALITY:
 ... denoise ladder stage 5, low-frequency rendering, large smooth color regions, suppressed noise
 ```
 
-### `prompts/source/evolution-strategy/PRISM-GOLDFISH.md`
+### `illustration/seeds/evolution-strategy/PRISM-GOLDFISH.md`
 
 editorial poster 的頻率壓縮：
 

@@ -51,7 +51,7 @@ looks like [celebrity name]
 
 ## Source Audit Requirement
 
-Before treating `prompts/source/` as a stable seed library, run a responsible prompt audit over all source prompts.
+Before treating `illustration/seeds/` as a stable seed library, run a responsible prompt audit over all source prompts.
 
 The audit must produce a report in:
 

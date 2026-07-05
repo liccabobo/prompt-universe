@@ -26,7 +26,7 @@
 
 ## Source Seed 參考
 
-### `prompts/source/prop-design/GOLDEN-MANGO-JELLY.md`
+### `illustration/seeds/prop-design/GOLDEN-MANGO-JELLY.md`
 
 完整 prop 材質覆寫範本：
 
@@ -65,7 +65,7 @@ smooth cel-shaded shadows, large clean color regions, illustration-first renderi
 non-3D anime illustration finish
 ```
 
-### `prompts/source/detail-shot/HOLO-NAILS.md`
+### `illustration/seeds/detail-shot/HOLO-NAILS.md`
 
 局部材質的插畫化（美甲 holo 不是真實光學）：
 
@@ -80,7 +80,7 @@ minimal material realism, controlled illustration flatness,
 minimal crystal-sharp rendering, low-noise rendering
 ```
 
-### `prompts/source/character-design/SNOW-WHITE.md`
+### `illustration/seeds/character-design/SNOW-WHITE.md`
 
 角色整體的 illustration-only 宣告：
 
@@ -94,7 +94,7 @@ soft refined material rendering, large clean material regions,
 controlled reflective hierarchy, reduced micro-detail density
 ```
 
-### `prompts/source/evolution-strategy/KUNG-FU.md`
+### `illustration/seeds/evolution-strategy/KUNG-FU.md`
 
 服裝 prism 是 couture fashion，不是 crystal armor：
 

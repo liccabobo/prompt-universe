@@ -54,6 +54,24 @@ output/publish/{{PROTOTYPE}}-{{YYYY-MM-DD}}/    發佈區（git 追蹤）
 variants  ->  publish
 ```
 
+## Prompt 檔名
+
+已發佈 variant prompt files 應保留穩定的 uppercase English variant prefix：
+
+```text
+MATCHING-PAW-PAIR-V001.md
+PRISM-LUNA-MOTH-V001.md
+```
+
+為了方便人工瀏覽，`output/publish/` 內的 prompt files 可以在 variant ID 後加上簡短中文或在地化辨識 suffix：
+
+```text
+MATCHING-PAW-PAIR-V001-柯基犬.md
+PRISM-LUNA-MOTH-V001-透明阿特拉斯天蛾.md
+```
+
+localized suffix 是選用的。穩定 prefix 與 variant number 必須保留不變，讓 scripts、manifest、夥伴流程仍能可靠排序與辨識檔案。
+
 ## 設定檔
 
 ```text

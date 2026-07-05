@@ -24,7 +24,7 @@ NEGATIVE-SPACE GUIDANCE:
 
 ## Source Seed 參考
 
-### `prompts/source/prop-design/GOLDEN-MANGO-JELLY.md`
+### `illustration/seeds/prop-design/GOLDEN-MANGO-JELLY.md`
 
 prop showcase 的留白與排版：
 
@@ -43,7 +43,7 @@ balanced asymmetrical layout, strong object readability
 
 要點：主體佔比明確（45–55%），背景刻意「almost textureless」。
 
-### `prompts/source/character-design/SNOW-WHITE.md`
+### `illustration/seeds/character-design/SNOW-WHITE.md`
 
 magazine cover 的編輯留白：
 
@@ -63,7 +63,7 @@ strong foreground-middle-background separation, elegant negative-space breathing
 
 要點：前中後景比例寫死；標題區與角色層疊關係明確。
 
-### `prompts/source/detail-shot/HOLO-NAILS.md`
+### `illustration/seeds/detail-shot/HOLO-NAILS.md`
 
 特寫構圖的 atmospheric negative space：
 
@@ -77,7 +77,7 @@ minimal reflective cosmetic studio environment, ... clean optical emptiness, dre
 
 要點：特寫不是置中商品照；用 off-center crop + 大氣留白導向指尖。
 
-### `prompts/source/evolution-strategy/PRISM-GOLDFISH.md`
+### `illustration/seeds/evolution-strategy/PRISM-GOLDFISH.md`
 
 poster 的 rule-of-thirds 留白：
 
@@ -97,7 +97,7 @@ open meadow, green grass, minimal flowers, large sky area, clean negative space,
 
 要點：三分法 + 單一主導對角結構，避免裝飾性填充。
 
-### `prompts/source/evolution-strategy/AFTERNOON-TEA.md`
+### `illustration/seeds/evolution-strategy/AFTERNOON-TEA.md`
 
 editorial 場景的 controlled negative space：
 
@@ -109,7 +109,7 @@ SMALL DETAIL:
 ... large breathing negative space, soft editorial framing, no excessive floral decoration
 ```
 
-### `prompts/source/evolution-fusion/AI-CIVILIZATIONcivilization-square.md`
+### `illustration/seeds/evolution-fusion/AI-CIVILIZATIONcivilization-square.md`
 
 大場景的 civilization-scale negative space：
 

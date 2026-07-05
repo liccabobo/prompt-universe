@@ -6,6 +6,24 @@ Define how controlled prompt variants should diverge from a canonical prototype.
 
 This file governs `defexpansion-plan`, `batch-generate`, and AI-authored mutation sets.
 
+## Lisp-Only Authoring Boundary
+
+Variant authoring must stay inside the Prompt Universe Lisp DSL.
+
+Allowed:
+
+- Write or edit `defexpansion-plan` files directly under `lisp/generator/plans/`.
+- Use Lisp data, helper functions, macros, or DSL forms that live in the Lisp runtime and are loaded through `prompt-universe.asd`.
+- Run `sbcl --script scripts/batch-generate.lisp ...` after the Lisp plan exists and validates.
+
+Forbidden:
+
+- Do not create Python, shell, JavaScript, or other external codegen scripts to generate `defexpansion-plan` files.
+- Do not place one-off plan generators under `scripts/`.
+- Do not treat external codegen as part of the variant workflow, even when the final artifact is a Lisp file.
+
+If a variant family is too large to author manually, implement the generator as Lisp data/functions/macros in the normal Lisp tree, with visible `preserve` / `mutate` / `forbid` boundaries and validator-readable output.
+
 ## Core Principle
 
 A variant changes **semantic premise**, not only rendering adjectives.

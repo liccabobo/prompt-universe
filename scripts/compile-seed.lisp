@@ -1,5 +1,5 @@
 #!/usr/bin/env sbcl --script
-;;;; Compile any curated seed from prompts/source/ to output/.
+;;;; Compile any curated seed from illustration/seeds/ to output/.
 (require :asdf)
 (pushnew (truename "./") asdf:*central-registry* :test #'equal)
 (ensure-directories-exist "build/fasl-cache/")
@@ -14,7 +14,7 @@
   (format t "================================~%~%")
   (format t "Usage:~%")
   (format t "  sbcl --script scripts/compile-seed.lisp <seed-id> [--stage STAGE]~%~%")
-  (format t "  seed-id   Relative path without .md under prompts/source/~%")
+  (format t "  seed-id   Relative path without .md under illustration/seeds/~%")
   (format t "            Example: prop-design/GOLDEN-MANGO-JELLY~%~%")
   (format t "  --stage   candidate | approved | variant | batch  (default: candidate)~%")
   (format t "  --list    List available seeds~%")
@@ -24,7 +24,7 @@
   (format t "  sbcl --script scripts/compile-seed.lisp detail-shot/HOLO-NAILS --stage candidate~%")
   (finish-output))
 
-(defun list-seeds (&optional (root "prompts/source/"))
+(defun list-seeds (&optional (root "illustration/seeds/"))
   (let ((root-path (truename root)))
     (sort
      (loop for file in (directory (merge-pathnames "**/*.md" root-path))
@@ -75,7 +75,7 @@
      (usage)
      (sb-ext:exit :code 1))
     (t
-     (format t "~&Seed: prompts/source/~A.md~%" seed-id)
+     (format t "~&Seed: illustration/seeds/~A.md~%" seed-id)
      (format t "Stage: ~A~%~%" (string-downcase (symbol-name stage)))
      (handler-case
          (progn

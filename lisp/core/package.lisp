@@ -13,11 +13,15 @@
    #:defprompt
    #:defmodule
    #:defprompt-method
+   #:defcomposition-tree
+   #:defseed-control
    #:defexpansion-plan
    #:defevolution
    #:find-prompt
    #:find-module
    #:find-prompt-method
+   #:find-composition-tree
+   #:find-seed-control
    #:find-expansion-plan
    #:find-evolution
    #:load-seed
@@ -37,6 +41,17 @@
    #:*publish-config-path*
    #:validate-expansion-plan-mutations
    #:variant-axis-summary
+   #:effective-plan-preserve
+   #:effective-plan-forbid
+   #:reload-mode-config
+   #:mode-config
+   #:current-mode-id
+   #:current-mode
+   #:mode-name
+   #:illustration-mode-p
+   #:mode-summary
+   #:*mode-id-registry*
+   #:*mode-config-path*
    #:reload-variant-controller
    #:variant-controller
    #:variant-controller-summary

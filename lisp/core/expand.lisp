@@ -54,11 +54,13 @@
                                                                     table)))))))))
 
 (defun expand-prompt-structure (name intent semantic-tags risk-tags preface
-                                direct-sections module-refs method-refs)
+                                direct-sections module-refs method-refs
+                                &optional composition-refs)
   (let* ((expanded-sections
           (merge-sections
            (list (resolve-module-sections module-refs)
                  (resolve-method-sections method-refs)
+                 (resolve-composition-sections composition-refs)
                  direct-sections))))
     (make-prompt
      :name name

@@ -75,7 +75,8 @@
         (preface nil)
         (sections nil)
         (module-refs nil)
-        (method-refs nil))
+        (method-refs nil)
+        (composition-refs nil))
     (dolist (form forms)
       (unless (consp form)
         (error "Invalid prompt form in ~A: ~S" name form))
@@ -99,11 +100,13 @@
          (setf module-refs (append module-refs (rest form))))
         (:use-method
          (setf method-refs (append method-refs (rest form))))
+        (:use-composition
+         (setf composition-refs (append composition-refs (rest form))))
         (otherwise
          (error "Unknown prompt form in ~A: ~S" name form))))
     (expand-prompt-structure
      name intent semantic-tags risk-tags preface
-     (nreverse sections) module-refs method-refs)))
+     (nreverse sections) module-refs method-refs composition-refs)))
 
 (defmacro defmodule (name &body forms)
   `(register-module ',name (parse-module-forms ',name ',forms)))

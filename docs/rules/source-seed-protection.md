@@ -2,7 +2,7 @@
 
 ## Purpose
 
-`prompts/source/` is the curated seed prompt library.
+`illustration/seeds/` is the curated seed prompt library for illustration mode (formerly `prompts/source/`).
 
 Files in this directory are successful, experimentally verified prompts with high reuse value. They are treated as stable seeds for retrieval, reference, fusion, and expansion.
 
@@ -11,7 +11,7 @@ Files in this directory are successful, experimentally verified prompts with hig
 AI must not modify files under:
 
 ```text
-prompts/source/
+illustration/seeds/
 ```
 
 This includes:
@@ -29,7 +29,7 @@ If a source prompt has an issue, AI must report it instead of editing it.
 
 ## Allowed Use
 
-AI may read `prompts/source/` files for:
+AI may read `illustration/seeds/` files for:
 
 - seed retrieval
 - structure analysis
@@ -39,11 +39,11 @@ AI may read `prompts/source/` files for:
 - prompt comparison
 - generating derived Lisp drafts
 
-AI may not write back to `prompts/source/`.
+AI may not write back to `illustration/seeds/`.
 
 ## Derived Prompt Rule
 
-AI-generated or compiler-generated prompt files must not be placed in `prompts/source/`.
+AI-generated or compiler-generated prompt files must not be placed in `illustration/seeds/`.
 
 They must be written to `output/` according to lifecycle stage:
 

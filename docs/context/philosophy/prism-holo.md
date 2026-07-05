@@ -22,4 +22,4 @@ clean low-frequency cel-shading 乾淨的低頻賽璐璐上色
 簡單說，我把 GPT Image 2 當作 Adobe 工具去思考。
 
 holo 光療美甲｜咒語參考
-prompts/source/detail-shot/HOLO-NAILS.md
+illustration/seeds/detail-shot/HOLO-NAILS.md

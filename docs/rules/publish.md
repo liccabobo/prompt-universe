@@ -40,6 +40,24 @@ Folder naming stays identical. Only the parent directory changes:
 variants  ->  publish
 ```
 
+## Prompt Filenames
+
+Published variant prompt files should keep the stable uppercase English variant prefix:
+
+```text
+MATCHING-PAW-PAIR-V001.md
+PRISM-LUNA-MOTH-V001.md
+```
+
+When useful for human browsing, `output/publish/` prompt files may add a compact localized descriptor suffix after the variant ID:
+
+```text
+MATCHING-PAW-PAIR-V001-柯基犬.md
+PRISM-LUNA-MOTH-V001-透明阿特拉斯天蛾.md
+```
+
+The localized suffix is optional. Keep the stable prefix and variant number unchanged so scripts, manifests, and partner workflows can still sort and identify files reliably.
+
 ## Config
 
 ```text

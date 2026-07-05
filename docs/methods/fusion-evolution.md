@@ -38,7 +38,7 @@ DESIGN EVOLUTION STRATEGY:   ; 圖形融合專用
 
 ## Source Seed 參考
 
-### `prompts/source/evolution-fusion/AI-CIVILIZATIONcivilization-square.md`
+### `illustration/seeds/evolution-fusion/AI-CIVILIZATIONcivilization-square.md`
 
 語義融合 + 大場景負空間：
 
@@ -61,7 +61,7 @@ vast AI civilization plaza, ... large negative-space composition, civilization-s
 
 要點：用「evolves into / blended with」描述映射關係；場景保留 large negative-space。
 
-### `prompts/source/evolution-strategy/KUNG-FU.md`
+### `illustration/seeds/evolution-strategy/KUNG-FU.md`
 
 圖形設計融合（禁止物理變形）：
 
@@ -80,7 +80,7 @@ not liquid clothing, not liquid anatomy, not body deformation
 
 要點：明確寫出 **what fuses**（color, shape, rhythm）與 **what must not fuse**（body, liquid anatomy）。
 
-### `prompts/source/evolution-strategy/PRISM-GOLDFISH.md`
+### `illustration/seeds/evolution-strategy/PRISM-GOLDFISH.md`
 
 主體與元素整合式演化：
 
@@ -97,7 +97,7 @@ strict rule-of-thirds layout, ... single dominant diagonal structure
 
 要點：integrated into composition rather than decoration——避免融合變成貼圖裝飾。
 
-### `prompts/source/noise-reduction-ladder/EMERALD-JADE.md`
+### `illustration/seeds/noise-reduction-ladder/EMERALD-JADE.md`
 
 光效演化（低風險 accent 融合）：
 
@@ -111,7 +111,7 @@ noise is reduced through broad mineral surfaces and controlled glow behavior
 
 要點：演化敘事同時宣告降噪策略。
 
-### `prompts/source/evolution-strategy/AFTERNOON-TEA.md`
+### `illustration/seeds/evolution-strategy/AFTERNOON-TEA.md`
 
 服裝邏輯軟演化（非跨 prompt 融合，但屬 evolution strategy 範本）：
 

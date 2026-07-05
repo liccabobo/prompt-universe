@@ -1,7 +1,7 @@
 (in-package #:prompt-universe)
 
 (defparameter *seed-root*
-  "prompts/source/"
+  "illustration/seeds/"
   "Root directory for immutable curated seed prompts.")
 
 (defun seed-relative-path (seed-id)
@@ -24,7 +24,7 @@
               (every (lambda (char)
                        (or (upper-case-p char)
                            (digit-char-p char)
-                           (find char '(#\- #\space #\:))))
+                           (find char '(#\- #\space #\: #\&))))
                      (subseq trimmed 0 (1- (length trimmed))))))))
 
 (defun parse-param-line-p (line)
@@ -78,7 +78,7 @@
       (values (nreverse preface) (sort-sections (nreverse sections))))))
 
 (defun load-seed (seed-id)
-  "Load immutable seed markdown from prompts/source/ into a prompt struct."
+  "Load immutable seed markdown from illustration/seeds/ into a prompt struct."
   (let ((path (seed-file-path seed-id)))
     (unless (probe-file path)
       (error "Seed not found: ~A (~A)" seed-id path))
