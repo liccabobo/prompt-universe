@@ -8,8 +8,8 @@
     :priority :highest
     :preserve t
     :position "lower-center foreground"
-    :details ("one clearly readable full-body axolotl"
-              "face and external gills unobstructed"
+    :details ("one clearly readable full-body special-species animal"
+              "face and distinctive species traits unobstructed"
               "small scale established by nearby ride details"))
   (scale-anchor colossal-ice-cream-landmark
     :priority :high
@@ -64,10 +64,10 @@
 
   (:section "PRIMARY"
     "whimsical 2d anime environment illustration"
-    "one tiny Mexican axolotl as the emotional hero"
-    "recognizable feathery external gills"
-    "rounded aquatic body and short delicate limbs"
-    "curious joyful expression"
+    "one tiny special-species animal as the emotional hero"
+    "recognizable species anatomy defined by creature direction"
+    "distinctive face, ears, tail, coat, feathers, scales, or gills remain unobstructed as applicable"
+    "emotion and action remain clearly readable"
     "full-body silhouette readability"
     "extreme small-animal versus giant-landmark scale contrast")
 
@@ -79,6 +79,24 @@
 
   (:section "CREATURE DIRECTION"
     (param "single Mexican axolotl wearing a miniature lemon-yellow carnival neckerchief and carrying a tiny berry ticket pouch, species traits remain visible, no costume covering the external gills"))
+
+  (:section "OUTFIT DESIGN"
+    (param "miniature lemon-yellow carnival neckerchief and berry ticket pouch, fitted below the external gills, species anatomy unobstructed"))
+
+  (:section "ACTION"
+    (param "curious joyful pause at the park entrance, head lifted toward the colossal soft-serve tower, tiny forefeet planted clearly on the path"))
+
+  (:section "EMOTION"
+    (param "curious joy"))
+
+  (:section "WEATHER"
+    (param "crisp electric-cyan daylight with a clear sky"))
+
+  (:section "BACKGROUND"
+    (param "open berry-mint amusement-park skyline under crisp electric-cyan daylight, deep indigo distance, clean weather visibility"))
+
+  (:section "EVOLUTION STRATEGY"
+    (param "axolotl gill curves echo the berry-mint soft-serve spiral and rounded ride geometry through graphic motifs only, no body mutation"))
 
   (:section "OBJECT DESIGN"
     (param "monumental soft-serve landmark with broad berry-magenta and electric-cyan ribbons, graphic illustrated melting edges, waffle cone architecture, bold iconic silhouette"))
@@ -104,6 +122,11 @@
   (:section "LIGHTING"
     (param "electric-cyan daylight against deep indigo shadow pockets, hot magenta rim accents, lemon-yellow ride lights, strong cool-warm separation, crisp readable silhouettes"))
 
+  (:section "QUATERNARY"
+    "localized edible-glaze shimmer only"
+    "controlled secondary material accent"
+    "no full-surface sparkle spread")
+
   (:section "QUALITY"
     "clear species anatomy"
     "clear amusement-park geography"
@@ -114,9 +137,9 @@
 
   (:section "NEGATIVE"
     "multiple animals"
-    "generic lizard"
-    "missing external gills"
-    "costume covering gills"
+    "generic species design"
+    "missing distinctive species traits"
+    "costume covering species traits"
     "animal hidden by rides"
     "landmark cropped beyond recognition"
     "ordinary-size ice cream"
@@ -160,7 +183,8 @@
   (:locked-sections :primary :rendering-style :camera :quality :negative)
   (:parameterized-sections
    :title :subtitle :description-design :color-theme :secondary
-   :scene-design :creature-direction :object-design :accessory-design :lighting)
+   :scene-design :creature-direction :outfit-design :action :emotion :weather :background
+   :evolution-strategy :object-design :accessory-design :lighting)
   (:variant-axes
    (:required :color-theme :theme-anchor :accessory-set)
    (:recommended :scene-shell :composition :lighting)

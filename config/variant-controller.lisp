@@ -11,7 +11,7 @@
 ;;;; :axis-threshold   滑桿硬性要求門檻；大於等於此值會在驗證時強制要求（預設 50）。
 ;;;; :variant-count    每次批次 / evolve run 的預設變體數量（預設 10）。
 
-((:variant-count . 20)        ; 變體數量：本次批次或 evolve run 要生成的 prompt 數（預設 10）。
+((:variant-count . 50)        ; 變體數量：本次批次或 evolve run 要生成的 prompt 數（預設 10）。
  (:color-shift . 80)          ; 色彩變化強度：控制 palette / color-theme 必須改變的程度。
  (:gender-mode . :mutable)    ; 性別模式：:fixed 保留原性別呈現，:mutable 允許依變體漂移。
  (:scene-shift . 85)          ; 場景變化強度：控制 theme-anchor / scene premise 的改變幅度。

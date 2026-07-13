@@ -45,4 +45,5 @@
    (:file "lisp/generator/plans/aware-loop-transit-10")
    (:file "lisp/generator/plans/transparent-giant-flower-100")
    (:file "lisp/generator/plans/matching-paw-pair-species-100")
-   (:file "lisp/generator/plans/platform-last-light-uniform-10")))
+   (:file "lisp/generator/plans/platform-last-light-uniform-10")
+   (:file "lisp/generator/plans/colossal-ice-cream-carnival-species-weather-50")))
